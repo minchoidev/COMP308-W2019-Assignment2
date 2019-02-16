@@ -1,114 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title><%= title %></title>
-    <!-- CSS Section-->
-    <link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="Content/app.css" />
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="/">COMP308-Lesson3-Express</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<!-- Express Portfolio-->
+<!-- File Name: index.ejs-->
+<!-- Author: Minseok Choi-->
+<!-- StudentID: 300917184-->
+<!-- Date: 02/16/2019-->
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ml-auto">
-          <% if(title == "Home") { %>
-          <li class="nav-item active"><% } else { %></li>
+<% include ./partials/header.ejs %>
 
-          <li class="nav-item">
-            <% } %>
-            
-            <a class="nav-link" href="/"
-              ><i class="fa fa-lg fa-building"></i></i> Home
-              <span class="sr-only">(current)</span></a
-            >
-          </li>
+<header class="masthead text-white d-flex">
 
-          <% if(title == "About") { %>
-          <li class="nav-item active"><% } else { %></li>
-
-          <li class="nav-item">
-            <% } %>
-
-            <a class="nav-link" href="/about"
-              ><i class="fa fa-lg fa-info"></i> About</a
-            >
-          </li>
-
-          <% if(title == "Products") { %>
-          <li class="nav-item active"><% } else { %></li>
-
-          <li class="nav-item">
-            <% } %>
-
-            <a class="nav-link" href="/projects"
-              ><i class="fa fa-lg fa-shopping-bag"></i> Projects</a
-            >
-          </li>
-
-          <% if(title == "Services") { %>
-          <li class="nav-item active"><% } else { %></li>
-
-          <li class="nav-item">
-            <% } %>
-
-            <a class="nav-link" href="/services"
-              ><i class="fa fa-lg fa-user "></i> Services</a
-            >
-          </li>
-
-          <% if(title == "Contact") { %>
-          <li class="nav-item active"><% } else { %></li>
-
-          <li class="nav-item">
-            <% } %>
-
-            <a class="nav-link" href="/contact"
-              ><i class="fa fa-lg fa-phone-square"></i> Contact</a
-            >
-          </li>
-        </ul>
-      </div>
-    </nav>
-
-    <div class="container">
-      <div class="jumbotron">
-        <h1 class="display-4">Welcome to <%= title %></h1>
-        <p class="lead">
-          This is a simple hero unit, a simple jumbotron-style component for
-          calling extra attention to featured content or information.
-        </p>
-        <hr class="my-4" />
-        <p>
-          It uses utility classes for typography and spacing to space content
-          out within the larger container.
-        </p>
-        <p class="lead">
-          <a class="btn btn-primary btn-lg" href="#" role="button"
-            >Learn more</a
-          >
-        </p>
-      </div>
+  <div class="container my-auto" style="width: 80%;">
+    <div class="col-lg-4 mx-auto text-center">
+      <img alt="" class="img-profil" src="assets/images/profil.png">
+      <hr>
     </div>
+    <div class="col-lg-8 mx-auto text-faded ">
+      <br />
+      <h1><strong>Hello, I'm Min :)</strong></h1>
+      <h3>I'm a Web and Mobile app developer. </h3>
+      <h3 class="mb-5">I've wanted to see you. </h3>
+      <h4 class="mb-5">For a convenience of all the people, for a contribution to the development, and for the fun, so I write code.</h4>
+      <div class="text-center">
+      <a class="btn btn-primary btn-xl" href="about">
+        About Me</a>
+      </div>
 
-    <!-- JavaScript Section -->
-    <script src="jquery/dist/jquery.min.js"></script>
-    <script src="bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="Scripts/app.js"></script>
-  </body>
-</html>
+    </div>
+  </div>
+
+</header>
+
+<% include ./partials/footer.ejs %>

@@ -1,10 +1,17 @@
+// Express Portfolio
+// File Name: app.js
+// Author: Minseok Choi
+// StudentID: 300917184
+// Date: 02/16/2019
+
+
 let createError = require('http-errors');
 let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
-
 let indexRouter = require('./routes/index');
+let favicon = require('serve-favicon');
 
 let app = express();
 
@@ -18,6 +25,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
+app.use(favicon(path.join(__dirname, 'public', 'assets', 'images', 'favicon-32x32.ico')));  // favicon
 
 app.use('/', indexRouter);
 
@@ -36,5 +44,6 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
 
 module.exports = app;
