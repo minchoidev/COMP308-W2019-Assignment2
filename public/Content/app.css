@@ -15,7 +15,7 @@
     width: 80%;
     min-height: 100%;
     background-color: rgba(0, 0, 0, 0.3);
-    min-height: 720px;
+    min-height: 820px;
 }
 
 .container-fade-round {
@@ -31,7 +31,7 @@
    background: #dddddd;
    min-height: 100%;
    padding: 50px;
-   min-height: 720px;
+   min-height: 800px;
 }
 
 /*round image 100px size*/
