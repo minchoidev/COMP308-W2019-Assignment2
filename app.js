@@ -11,7 +11,6 @@ let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 let indexRouter = require('./routes/index');
-let favicon = require('serve-favicon');
 
 let app = express();
 
@@ -25,7 +24,6 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
-app.use(favicon(path.join(__dirname, 'public', 'assets', 'images', 'favicon-32x32.ico')));  // favicon
 
 app.use('/', indexRouter);
 
