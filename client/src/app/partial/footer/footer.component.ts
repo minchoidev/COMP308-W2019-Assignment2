@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
+  year: number;   // to display the current year on copyright
   constructor() { }
 
   ngOnInit() {
+    const date = new Date();
+    this.year = date.getFullYear();
   }
 
 }
