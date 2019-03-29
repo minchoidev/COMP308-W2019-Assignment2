@@ -1,5 +1,7 @@
 let express = require('express');
 let router = express.Router();
+let mongoose = require("mongoose");
+let passport = require("passport");
 
 let jwt = require('jsonwebtoken');
 let DB = require('../config/db');
@@ -31,7 +33,7 @@ module.exports.displayContactPage = (req, res, next) => {
   }
   */
 
-// process login page
+// process user login
 module.exports.processLoginPage = (req, res, next) => {
     passport.authenticate('local',
         (err, user, info) => {
@@ -41,7 +43,7 @@ module.exports.processLoginPage = (req, res, next) => {
             }
             // is there a user login error?
             if (!user) {
-                return res.json({ success: false, msg: 'ERROR: Failed to Log In User!' });
+                return res.json({ success: false, msg: 'ERROR: Login Failed!' });
             }
             req.logIn(user, (err) => {
                 // server error?
@@ -62,20 +64,18 @@ module.exports.processLoginPage = (req, res, next) => {
 
 
                 return res.json({
-                    success: true, msg: 'User Logged in Successfully!', user: {
+                    success: true, msg: 'User has been logged in successfully!', user: {
                         id: user._id,
                         displayName: user.displayName,
                         username: user.username,
                         email: user.email
                     }, token: authToken
                 });
-
-
             });
         })(req, res, next);
 }
 
-// process register page
+// process user registeration
 module.exports.processRegisterPage = (req, res, next) => {
     // define a new user object
     let newUser = new User({
@@ -91,17 +91,17 @@ module.exports.processRegisterPage = (req, res, next) => {
             if (err.name == "UserExistsError") {
                 console.log("Error: User Already Exists!");
             }
-            return res.json({ success: false, msg: 'ERROR: Failed to Register User!' });
+            return res.json({ success: false, msg: 'ERROR: User Registration Failed!' });
         } else {
             // if no error exists, then registration is successful
 
             // redirect the user
-            return res.json({ success: true, msg: 'User Registered Successfully!' });
+            return res.json({ success: true, msg: 'User has been registered Successfully!' });
         }
     });
 };
 
-// process logout
+// process user logout
 module.exports.performLogout = (req, res, next) => {
     req.logout();
     res.json({ success: true, msg: 'User Successfully Logged out!' });

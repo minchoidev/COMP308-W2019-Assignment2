@@ -18,5 +18,13 @@ let indexController = require('../controllers/index');
 /* GET contact page. */
 //router.get('/contact', indexController.displayContactPage);
 
+/* POST - processes User Login */
+router.post('/login', indexController.processLoginPage);
+
+/* POST - processes User Register */
+router.post('/register', indexController.processRegisterPage);
+
+/* GET - perform User Logout */
+router.get('/logout', indexController.performLogout);
 
 module.exports = router;
