@@ -1,14 +1,29 @@
 let mongoose = require('mongoose');
 
-//create a contact model class
+//create a todo model class
 let todoSchema = mongoose.Schema({
-    subject: String,
-    description: String,
-    category: String,
-    date: Date
+    subject: {
+        type: String,
+        default: "",
+        trim: true,
+        required: "Subject is required"
+    },
+    description: {
+        type: String,
+        default: "",
+        trim: true
+    },
+    category: {
+        type: String,
+        default: "",
+        trim: true
+    },
+    date: {
+        type: Date,
+        default: Date.now
+    }
 },
 {
-    collection: "todoCollection"
+    collection: "todos"
 })
-
-module.exports = mongoose.model('test', contactSchema);
+module.exports = mongoose.model('test', todoSchema);

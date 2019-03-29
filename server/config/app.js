@@ -10,12 +10,20 @@ let express = require('express');
 let path = require('path');
 let cookieParser = require('cookie-parser');
 let logger = require('morgan');
-let indexRouter = require('../routes/index');
-
-
 let cors = require('cors');
+
+
+// Modules for AUTHENTICATION
+let session = require('express-session');
+let passport = require('passport');
+
+let passportJWT = require('passport-jwt');
 let JWTStrategy = passportJWT.Strategy;
 let ExtractJWT = passportJWT.ExtractJwt;
+
+let passportLocal = require('passport-local');
+let localStrategy = passportLocal.Strategy;
+let flash = require('connect-flash');
 
 
 
@@ -32,6 +40,9 @@ mongoDB.once('open', () => {
   console.log("Connected to MongoDB...");
 });
 
+let indexRouter = require('../routes/index');
+let todoRouter = require('../routes/todo'); // error
+
 
 let app = express();
 
@@ -46,10 +57,57 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 
-app.use('/', indexRouter);
+app.use(cors());
 
+// setup express-session
+app.use(session({
+  secret: "SomeSecret",
+  saveUninitialized: false,
+  resave: false
+}));
 
+// initialize flash
+app.use(flash());
 
+// initialize passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+// pasport user configuration
+
+// create a User model
+let userModel = require('../models/user');
+let User = userModel.User;
+
+// implement a User authetication strategy
+passport.use(User.createStrategy());
+
+// serialize and deserialize the User info
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+// this part verfies that the token is being sent by the user and is valid
+let jwtOptions = {};
+jwtOptions.jwtFromRequest = ExtractJWT.fromAuthHeaderAsBearerToken();
+jwtOptions.secretOrKey = DB.secret;
+
+let strategy = new JWTStrategy(jwtOptions, (jwt_payload, done) => {
+  User.findById(jwt_payload.id)
+    .then(user => {
+      return done(null, user);
+    })
+    .catch(err => {
+      return done(err, false);
+    });
+});
+
+passport.use(strategy);
+
+app.use('/api', indexRouter);
+app.use('/api/todo-list', todoRouter);    // error
+app.get('*', (req, res) => {
+  res.sendfile(path.join(__dirname, '../../public/index.html'));
+});
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

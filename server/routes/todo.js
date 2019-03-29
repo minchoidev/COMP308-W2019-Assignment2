@@ -9,23 +9,22 @@ let todoController = require('../controllers/todo');
 
 function requireAuth(req, res, next) {
     // check if the user is logged in
-    if(!req.isAuthenticated()) {
+    if (!req.isAuthenticated()) {
         return res.redirect('/login');
     }
     next();
 }
 
 /* GET todo List page - READ Operation */
-router.get('/', todoController.displaytodoList);
+router.get('/', todoController.displayToDoList);
 
-/* GET Route for the Add page 
-   this will display the Add page */
+/* GET request - Display Add page */
 router.get('/add', todoController.displayAddPage);
 
-/* POST Route for processing the Add page */
+/* POST request - Add new todo in database */
 router.post('/add', todoController.processAddPage);
 
-/* GET request - display the Edit page */
+/* GET request - Display Edit page */
 router.get('/edit/:id', todoController.displayEditPage);
 
 /* POST request - Update the database with data from the Edit Page */
