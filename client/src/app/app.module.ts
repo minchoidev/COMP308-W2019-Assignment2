@@ -1,3 +1,9 @@
+// MEAN Portfolio
+// File Name: app.module.ts
+// Author: Minseok Choi
+// StudentID: 300917184
+// Date: 03/29/2019
+
 // Modules
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';

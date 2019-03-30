@@ -1,3 +1,8 @@
+// MEAN Portfolio
+// File Name: todo-list.component.ts
+// Author: Minseok Choi
+// StudentID: 300917184
+// Date: 03/29/2019
 import { Component, OnInit } from '@angular/core';
 import { TodoService } from 'src/app/services/todo.service';
 import { FlashMessagesService } from 'angular2-flash-messages';

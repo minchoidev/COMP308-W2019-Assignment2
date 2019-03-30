@@ -1,3 +1,9 @@
+// MEAN Portfolio
+// File Name: app-routing.module.ts
+// Author: Minseok Choi
+// StudentID: 300917184
+// Date: 03/29/2019
+
 // Modules
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';

@@ -1,3 +1,8 @@
+// MEAN Portfolio
+// File Name: todo.service.ts
+// Author: Minseok Choi
+// StudentID: 300917184
+// Date: 03/29/2019
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';

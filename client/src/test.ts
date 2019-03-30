@@ -1,3 +1,9 @@
+// MEAN Portfolio
+// File Name: test.ts
+// Author: Minseok Choi
+// StudentID: 300917184
+// Date: 03/29/2019
+
 // This file is required by karma.conf.js and loads recursively all the .spec and framework files
 
 import 'zone.js/dist/zone-testing';
