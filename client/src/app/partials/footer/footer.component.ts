@@ -7,8 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  year: number;   // to display the current year in the copyright
-
+  year: number;   // to display the current year on copyright
   constructor() { }
 
   ngOnInit() {
