@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { TodoService } from 'src/app/services/todo.service';
 import { FlashMessagesService } from 'angular2-flash-messages';
-//import { TodoService } from './../../services/todo.service';
 import { Router } from '@angular/router';
-
 import { Todo } from 'src/app/models/todo';
+
 
 @Component({
   selector: 'app-todo-list',
@@ -36,5 +35,12 @@ export class TodoListComponent implements OnInit {
       }
     });
   }
+
+  private onDeleteClick(): void {
+    if(!confirm('Are You Sure to delete the object?')) {
+      this.router.navigate(['/todo-list']);
+    }
+  }
+
 
 }

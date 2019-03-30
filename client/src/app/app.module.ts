@@ -15,15 +15,16 @@ import { ProductsComponent } from './pages/products/products.component';
 import { ServicesComponent } from './pages/services/services.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { LoginComponent } from './pages/login/login.component';
+import { TodoListComponent } from './todos/todo-list/todo-list.component';
+import { TodoDetailsComponent } from './todos/todo-details/todo-details.component';
+import { TodoDeleteComponent } from './todos/todo-delete/todo-delete.component';
+
 
 // Services
 import { FlashMessagesModule, FlashMessagesService } from 'angular2-flash-messages';
-import { TodoListComponent } from './todos/todo-list/todo-list.component';
-import { RegisterComponent } from './pages/register/register.component';
-import { LoginComponent } from './pages/login/login.component';
-import { TodoDetailsComponent } from './todo-details/todo-details.component';
-import { TodoDeleteComponent } from './todo-delete/todo-delete.component';
-import { UserComponent } from './models/user/user.component';
+import { AuthService } from './services/auth.service';
 
 
 @NgModule({
@@ -41,8 +42,7 @@ import { UserComponent } from './models/user/user.component';
     RegisterComponent,
     LoginComponent,
     TodoDetailsComponent,
-    TodoDeleteComponent,
-    UserComponent
+    TodoDeleteComponent
   ],
   imports: [
     BrowserModule,
