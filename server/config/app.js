@@ -1,8 +1,8 @@
-// Express Portfolio
+// MEAN Portfolio
 // File Name: app.js
 // Author: Minseok Choi
 // StudentID: 300917184
-// Date: 02/16/2019
+// Date: 03/29/2019
 
 
 let createError = require('http-errors');
