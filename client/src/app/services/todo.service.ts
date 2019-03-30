@@ -17,7 +17,7 @@ export class TodoService {
 
   private user: User;
 
-  private endpoint = 'http://localhost:4000/api/todo-list/';
+  private endpoint = 'https://minseokchoi-comp308-assign2.herokuapp.com/api/todo-list/';
 
   private httpOptions = {
     headers: new HttpHeaders( {

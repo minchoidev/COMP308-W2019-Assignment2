@@ -16,7 +16,7 @@ export class AuthService {
   user: User;
   private authToken: any;
 
-  private endpoint = 'http://localhost:4000/api/';
+  private endpoint = 'https://minseokchoi-comp308-assign2.herokuapp.com/api/';
 
   private httpOptions = {
     headers: new HttpHeaders({
