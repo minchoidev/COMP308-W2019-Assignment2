@@ -1,8 +1,8 @@
-<!-- Express Portfolio-->
-<!-- File Name: header.ejs-->
+<!-- MEAN Portfolio-->
+<!-- File Name: header.component.html-->
 <!-- Author: Minseok Choi-->
 <!-- StudentID: 300917184-->
-<!-- Date: 02/16/2019-->
+<!-- Date: 03/29/2019-->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -21,7 +21,7 @@
 <body>
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top mainNav">
-    <a class="navbar-brand" href="/"><img class="img-logo-name" src="../Assets/images/logo_name.jpg"> </a>
+    <a class="navbar-brand" routerLink="/"><img class="img-logo-name" src="../Assets/images/logo_name.jpg"> </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -34,7 +34,7 @@
         <li class="nav-item">
           <% } %>
 
-          <a class="nav-link" href="/"> Home
+          <a class="nav-link" routerLink="/"> Home
             <span class="sr-only">(current)</span></a>
         </li>
 
@@ -44,7 +44,7 @@
         <li class="nav-item">
           <% } %>
 
-          <a class="nav-link" href="/about">About</a>
+          <a class="nav-link" routerLink="/about">About</a>
         </li>
 
         <% if(title == "Projects") { %>
@@ -53,7 +53,7 @@
         <li class="nav-item">
           <% } %>
 
-          <a class="nav-link" href="/projects"> Projects</a>
+          <a class="nav-link" routerLink="/projects"> Projects</a>
         </li>
 
         <% if(title == "Services") { %>
@@ -62,7 +62,7 @@
         <li class="nav-item">
           <% } %>
 
-          <a class="nav-link" href="/services"> Services</a>
+          <a class="nav-link" routerLink="/services"> Services</a>
         </li>
 
         <% if(title == "Contact") { %>
@@ -71,7 +71,7 @@
         <li class="nav-item">
           <% } %>
 
-          <a class="nav-link" href="/contact"> Contact</a>
+          <a class="nav-link" routerLink="/contact"> Contact</a>
         </li>
       </ul>
     </div>
