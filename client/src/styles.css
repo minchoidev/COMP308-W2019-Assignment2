@@ -70,7 +70,7 @@
   /*background container*/
   #background {
     padding-top: 4rem;
-  background-image: url("/../../assets/images/background.jpg");  
+  background-image: url("/assets/images/background.jpg");  
   background-position: top left;
   -webkit-background-size: 1920px;
   -moz-background-size: 1920px;
