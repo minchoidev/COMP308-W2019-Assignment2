@@ -19,6 +19,11 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 // Services
 import { FlashMessagesModule, FlashMessagesService } from 'angular2-flash-messages';
 import { TodoListComponent } from './todos/todo-list/todo-list.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { LoginComponent } from './pages/login/login.component';
+import { TodoDetailsComponent } from './todo-details/todo-details.component';
+import { TodoDeleteComponent } from './todo-delete/todo-delete.component';
+import { UserComponent } from './models/user/user.component';
 
 
 @NgModule({
@@ -32,7 +37,12 @@ import { TodoListComponent } from './todos/todo-list/todo-list.component';
     ServicesComponent,
     ContactComponent,
     PageNotFoundComponent,
-    TodoListComponent
+    TodoListComponent,
+    RegisterComponent,
+    LoginComponent,
+    TodoDetailsComponent,
+    TodoDeleteComponent,
+    UserComponent
   ],
   imports: [
     BrowserModule,
