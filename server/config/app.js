@@ -25,8 +25,6 @@ let passportLocal = require('passport-local');
 let localStrategy = passportLocal.Strategy;
 let flash = require('connect-flash');
 
-
-
 // database setup
 let mongoose = require('mongoose');
 let DB = require('./db');
@@ -41,7 +39,7 @@ mongoDB.once('open', () => {
 });
 
 let indexRouter = require('../routes/index');
-let todoRouter = require('../routes/todo'); // error
+let todoRouter = require('../routes/todo');
 
 
 let app = express();

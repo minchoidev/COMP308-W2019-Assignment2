@@ -36,7 +36,7 @@ export class TodoDeleteComponent implements OnInit {
     this.deleteTodo(this.todo);
   }
 
-  private deleteTodo(todo: Todo): void {
+  deleteTodo(todo: Todo): void {
     this.todoService.deleteTodo(todo).subscribe(data => {
       if (data.success) {
         this.flashMessage.show(data.msg, { cssClass: 'alert-warning', timeOut: 3000 });

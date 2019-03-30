@@ -41,7 +41,7 @@ export class TodoListComponent implements OnInit {
     });
   }
 
-  private onDeleteClick(): void {
+  onDeleteClick(): void {
     if(!confirm('Are You Sure to delete the object?')) {
       this.router.navigate(['/todo-list']);
     }
