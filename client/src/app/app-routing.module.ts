@@ -20,6 +20,8 @@ import { RegisterComponent } from './pages/register/register.component';
 import { TodoListComponent } from './todos/todo-list/todo-list.component';
 import { TodoDetailsComponent } from './todos/todo-details/todo-details.component';
 import { TodoDeleteComponent } from './todos/todo-delete/todo-delete.component';
+import { AuthGuard } from './guards/auth.guard';
+
 
 
 const routes: Routes = [
@@ -28,7 +30,7 @@ const routes: Routes = [
   {path: 'products', component: ProductsComponent, data: {title: 'Products'}},
   {path: 'services', component: ServicesComponent, data: {title: 'Services'}},
   {path: 'contact', component: ContactComponent, data: {title: 'Contact'}},
-  {path: 'todo-list', component: TodoListComponent, data: {title: 'Todo List'}},
+  {path: 'todo-list', component: TodoListComponent, data: {title: 'Todo List'}, canActivate: [AuthGuard]},
   {path: 'todo-list/add', component: TodoDetailsComponent, data: {title: 'Add Todo'}},
   {path: 'todo-list/edit/:id', component: TodoDetailsComponent, data: {title: 'Edit Todo'}},
   {path: 'todo-list/delete/:id', component: TodoDeleteComponent, data: {title: 'Delete Todo'}},
