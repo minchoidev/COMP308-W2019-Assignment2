@@ -1,3 +1,8 @@
+// MEAN Portfolio
+// File Name: index.js
+// Author: Minseok Choi
+// StudentID: 300917184
+// Date: 03/29/2019
 let express = require('express');
 let router = express.Router();
 

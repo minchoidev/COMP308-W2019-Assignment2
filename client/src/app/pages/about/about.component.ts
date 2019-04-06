@@ -3,7 +3,6 @@
 // Author: Minseok Choi
 // StudentID: 300917184
 // Date: 03/29/2019
-
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 

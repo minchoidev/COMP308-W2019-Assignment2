@@ -31,28 +31,31 @@ export class TodoService {
     this.user = new User();
   }
 
-  // Use obserable pattern, subscribe to it and when anything changes we are notified
+  // use obserable pattern, subscribe to it and when anything changes we are notified
   public getList(): Observable<any> {
-    this.loadToken();
+    this.loadToken();                     // checks authorization
     return this.http.get<any>(this.endpoint, this.httpOptions);
   }
 
+  // get a specific todo data with its id
   public getTodo(todo: Todo): Observable<any> {
     this.loadToken();
     return this.http.get<any>(this.endpoint + 'edit/' + todo._id, this.httpOptions);
   }
 
-  // Updating todoList service so it can consume backend API
+  // add a new todo entity
   public addTodo(todo: Todo): Observable<any> {
     this.loadToken();
     return this.http.post<any>(this.endpoint + 'add', todo, this.httpOptions);
   }
 
+  // update an existing todo data with its id
   public editTodo(todo: Todo): Observable<any> {
     this.loadToken();
     return this.http.post<any>(this.endpoint + 'edit/' + todo._id, todo, this.httpOptions);
   }
 
+  // delete todo data
   public deleteTodo(todo: Todo): Observable<any> {
     this.loadToken();
     return this.http.get<any>(this.endpoint + 'delete/' + todo._id, this.httpOptions);

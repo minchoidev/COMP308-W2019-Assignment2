@@ -1,5 +1,11 @@
 #!/usr/bin/env node
 
+// MEAN Portfolio
+// File Name: server.js
+// Author: Minseok Choi
+// StudentID: 300917184
+// Date: 03/29/2019
+
 /**
  * Module dependencies.
  */

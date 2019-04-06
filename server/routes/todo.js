@@ -1,3 +1,8 @@
+// MEAN Portfolio
+// File Name: todo.js
+// Author: Minseok Choi
+// StudentID: 300917184
+// Date: 03/29/2019
 let express = require('express');
 let router = express.Router();
 
@@ -16,21 +21,21 @@ function requireAuth(req, res, next) {
 }
 
 /* GET todo List page - READ Operation */
-router.get('/', todoController.displayToDoList);
+router.get('/', passport.authenticate('jwt', {session:false}), todoController.displayToDoList);
 
 /* GET request - Display Add page */
-router.get('/add', todoController.displayAddPage);
+router.get('/add', passport.authenticate('jwt', {session:false}), todoController.displayAddPage);
 
 /* POST request - Add new todo in database */
-router.post('/add', todoController.processAddPage);
+router.post('/add', passport.authenticate('jwt', {session:false}), todoController.processAddPage);
 
 /* GET request - Display Edit page */
-router.get('/edit/:id', todoController.displayEditPage);
+router.get('/edit/:id', passport.authenticate('jwt', {session:false}), todoController.displayEditPage);
 
 /* POST request - Update the database with data from the Edit Page */
-router.post('/edit/:id', todoController.processEditPage);
+router.post('/edit/:id', passport.authenticate('jwt', {session:false}), todoController.processEditPage);
 
 /* GET request to perform the delete action */
-router.get('/delete/:id', todoController.performDelete);
+router.get('/delete/:id', passport.authenticate('jwt', {session:false}), todoController.performDelete);
 
 module.exports = router;

@@ -26,10 +26,12 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.user = new User();
+    // pull the user info from the localStorage
     this.user = JSON.parse(localStorage.getItem('user'));
   }
 
   onLogoutClick(): void {
+    // try logging out
     this.authService.logout().subscribe(data => {
       this.flashMessage.show(data.msg, { cssClass: 'alert-warning', timeOut: 5000 });
       this.router.navigate(['/login']);
@@ -38,7 +40,7 @@ export class HeaderComponent implements OnInit {
 
   isLoggedIn(): boolean {
     const result = this.authService.loggedIn();
-    if(result) {
+    if (result) {
       // shows logged in user's name after login
       this.user = JSON.parse(localStorage.getItem('user'));
     }

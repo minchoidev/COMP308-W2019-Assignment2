@@ -1,3 +1,8 @@
+// MEAN Portfolio
+// File Name: todo.js
+// Author: Minseok Choi
+// StudentID: 300917184
+// Date: 03/29/2019
 let mongoose = require('mongoose');
 
 //create a todo model class

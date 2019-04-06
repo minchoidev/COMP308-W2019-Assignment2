@@ -71,6 +71,6 @@ export function jwtTokenGetter() {
   ],
   providers: [FlashMessagesService, AuthGuard],
   bootstrap: [AppComponent],
-  
+
 })
 export class AppModule { }

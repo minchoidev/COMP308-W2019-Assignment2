@@ -1,3 +1,8 @@
+// MEAN Portfolio
+// File Name: user.js
+// Author: Minseok Choi
+// StudentID: 300917184
+// Date: 03/29/2019
 // User Model
 let mongoose = require("mongoose");
 let passportLocalMongoose = require("passport-local-mongoose");

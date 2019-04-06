@@ -31,10 +31,12 @@ export class LoginComponent implements OnInit {
   onLoginSubmit(): void {
      this.authService.authenticateUser(this.user).subscribe(data => {
       if (data.success) {
+        // save the user info and the token in localStorage
         this.authService.storeUserData(data.token, data.user);
         this.flashMessage.show(data.msg, {cssClass: 'alert-success', timeOut: 3000});
         this.router.navigate(['/home']);
       } else {
+        // return to login page again
         this.flashMessage.show(data.msg, {cssClass: 'alert-danger', timeOut: 3000});
         this.router.navigate(['/login']);
       }
