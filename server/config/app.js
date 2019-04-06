@@ -103,8 +103,8 @@ passport.use(strategy);
 
 app.use('/api', indexRouter);
 //requires authentication for using todoList service
-//app.use('/api/todo-list', passport.authenticate('jwt', {session:false}), todoRouter); 
-app.use('/api/todo-list', todoRouter); // without authentication   
+app.use('/api/todo-list', passport.authenticate('jwt', {session:false}), todoRouter); 
+//app.use('/api/todo-list', todoRouter); // without authorization   
 app.get('*', (req, res) => {
   res.sendfile(path.join(__dirname, '../../public/index.html'));
 });
